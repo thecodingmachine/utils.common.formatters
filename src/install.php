@@ -31,8 +31,8 @@ if (!$moufManager->instanceExists("italicFormatter")) {
 	$italicFormatter = $moufManager->createInstance("Mouf\\Utils\\Common\\Formatters\\PrefixSuffixFormatter");
 	// Let's set a name for this instance (otherwise, it would be anonymous)
 	$italicFormatter->setName("italicFormatter");
-	$boldFormatter->getProperty("prefix")->setValue("<i>");
-	$boldFormatter->getProperty("suffix")->setValue("</i>");
+	$italicFormatter->getProperty("prefix")->setValue("<i>");
+	$italicFormatter->getProperty("suffix")->setValue("</i>");
 }
 if (!$moufManager->instanceExists("readOnlyCheckBoxFormatter")) {
 	$italicFormatter = $moufManager->createInstance("Mouf\\Utils\\Common\\Formatters\\ReadOnlyCheckboxFormatter");
@@ -40,7 +40,7 @@ if (!$moufManager->instanceExists("readOnlyCheckBoxFormatter")) {
 	$italicFormatter->setName("readOnlyCheckBoxFormatter");
 }
 if (!$moufManager->instanceExists("timestampToFrdateFormatter")) {
-	$italicFormatter = $moufManager->createInstance("Mouf\\Utils\\Common\\Formatters\\DateFormatter");
+	$timestampToFrdateFormatter = $moufManager->createInstance("Mouf\\Utils\\Common\\Formatters\\DateFormatter");
 	// Let's set a name for this instance (otherwise, it would be anonymous)
 	$timestampToFrdateFormatter->setName("timestampToFrdateFormatter");
 	$timestampToFrdateFormatter->getProperty("sourceFormat")->setValue("timestamp");

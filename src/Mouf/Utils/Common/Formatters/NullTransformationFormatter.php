@@ -25,6 +25,7 @@ class NullTransformationFormatter implements FormatterInterface {
 	 */
 	public $useI18n;
 	
+
 	public function __construct($value=null, $useI18n=false) {
 		$this->value = $value;
 		$this->useI18n = $useI18n;
