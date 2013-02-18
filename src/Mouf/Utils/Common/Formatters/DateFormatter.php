@@ -68,6 +68,9 @@ class DateFormatter implements BijectiveFormatterInterface {
      */
     public function format($value) {
         if ($this->sourceFormat == "timestamp") {
+            if ($value === null){
+                return null;
+            }
             return date($this->getDestFormat(), $value);
         } else {
             $dateTime = DateTime::createFromFormat($this->sourceFormat, $value);
@@ -85,6 +88,10 @@ class DateFormatter implements BijectiveFormatterInterface {
      * @see BijectiveFormatterInterface::unformat()
      */
     public function unformat($value) {
+        if($value=="") {
+        	return null;
+        }
+        
         $array = date_parse_from_format($this->getDestFormat(), $value);
         $time = mktime($array['hour'], $array['minute'], $array['second'], $array['month'], $array['day'], $array['year']);
         if ($this->sourceFormat == "timestamp") {
