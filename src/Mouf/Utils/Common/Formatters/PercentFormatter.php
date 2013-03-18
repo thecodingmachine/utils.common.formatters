@@ -19,7 +19,9 @@ class PercentFormatter implements BijectiveFormatterInterface {
         if($value=="") {
         	return null;
         }
-        return ($value * 100);
+        
+        $value *= 100;
+        return ($value . "%");
     }
     
     /**
@@ -30,6 +32,7 @@ class PercentFormatter implements BijectiveFormatterInterface {
         if($value=="") {
         	return null;
         }
+        $value = rtrim($value,"%");
         return ($value/100);
     }
     
