@@ -17,7 +17,7 @@ class UrlToLinkFormatter implements FormatterInterface {
      * @see FormatterInterface::format()
      */
     public function format($value) {
-		$text = preg_replace('/http(s)*:\/\/[0-9a-z\.\:\/-_]+/', '<a href="${0}" target="_blank">${0}</a>', $value);
+		$text = preg_replace('/http(s)*:\/\/[0-9a-z\.\:\/\-_&=?%]+/', '<a href="${0}" target="_blank">${0}</a>', $value);
 		return $text;
     }
     
