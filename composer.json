@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Mouf": "src/"
+            "Mouf\\Utils\\Common\\Formatters": "src/"
         }
     },
     "extra": {
