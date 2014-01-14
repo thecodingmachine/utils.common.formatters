@@ -73,7 +73,7 @@ class DateFormatter implements BijectiveFormatterInterface {
             }
             return date($this->getDestFormat(), $value);
         } else {
-            $dateTime = DateTime::createFromFormat($this->sourceFormat, $value);
+            $dateTime = \DateTime::createFromFormat($this->sourceFormat, $value);
 
             if ($dateTime != null) {
                 return $dateTime->format($this->getDestFormat());
